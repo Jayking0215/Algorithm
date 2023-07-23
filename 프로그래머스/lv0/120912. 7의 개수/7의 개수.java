@@ -14,3 +14,10 @@ class Solution {
         return answer;
     }
 }
+
+//for (int num : array) {
+//    while (num >= 1) {
+//        if (num % 10 == 7) answer++;
+//        num /= 10;
+//    }
+//}
