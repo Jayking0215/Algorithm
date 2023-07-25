@@ -1,6 +1,6 @@
 class Solution {
     public String[] solution(String my_str, int n) {
-        int size = (int) Math.ceil((double) my_str.length() / n);
+        int size = (my_str.length() + n - 1) / n;
         String[] answer = new String[size];
         
         int cnt = 0;
