@@ -7,9 +7,9 @@ class Solution {
         }
 
         BigInteger answer = BigInteger.ONE;
-        BigInteger n = BigInteger.ONE;
-        BigInteger m = BigInteger.ONE;
-        BigInteger o = BigInteger.ONE;
+        BigInteger n = new BigInteger("1");
+        BigInteger m = new BigInteger("1");
+        BigInteger o = new BigInteger("1");
 
         for (int i = balls; i > 0; i--) {
             n = n.multiply(BigInteger.valueOf(i));
