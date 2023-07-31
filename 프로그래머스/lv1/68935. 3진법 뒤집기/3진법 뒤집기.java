@@ -2,11 +2,11 @@ import java.util.*;
 class Solution {
     public int solution(int n) {
         int answer = 0;
-        String str = "";
+        StringBuilder buf = new StringBuilder();
         while(n != 0) {
-            str += n % 3;
+            buf.append(n % 3);
             n /= 3;
         }
-        return Integer.parseInt(str, 3);
+        return Integer.parseInt(buf.toString(), 3);
     }
 }
