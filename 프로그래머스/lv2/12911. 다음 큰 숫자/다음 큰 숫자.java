@@ -21,3 +21,9 @@ class Solution {
         return answer;
     }
 }
+
+//2진수의 1의 갯수 cnt를 
+//String bi = Integer.toBinaryString(i);
+//int bi_cnt = bi.replaceAll("0", "").length();
+//에서
+//for문으로 변경(효율성 부분에서 for문이 더 유리함)
