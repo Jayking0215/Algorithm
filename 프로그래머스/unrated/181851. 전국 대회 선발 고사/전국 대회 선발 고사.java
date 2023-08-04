@@ -2,26 +2,35 @@ import java.util.*;
 class Solution {
     public int solution(int[] rank, boolean[] attendance) {
         int answer = 0;
-        int calc = 10000;
-        int cnt = 0;
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        Map<Integer,Boolean>map = new HashMap<>();
+        Map<Integer,Integer>box = new HashMap<>();
         
-        for(int i = 0; i < rank.length; i++) {
-            if(!attendance[i]) {
-                map.put(rank[i], -1);
-                continue;
-            }
-            map.put(rank[i], i);
+        for(int i =0; i<rank.length; i++){
+            map.put(rank[i],attendance[i]);
+            box.put(rank[i],i);
         }
-        
-        for(int r = 0; r < rank.length; r++) {
-            if(map.get(r+1) != -1) {
-                answer += calc*map.get(r+1);
-                calc /= 100;
-                cnt++;
+
+        int first = 0;
+        int second = 0;
+        int third = 0;
+
+        int count = 0;
+        for(int i = 1;i < map.size() + 1; i++){
+            if(map.get(i)){
+                if(count ==0){
+                    first = i;
+                }else if(count ==1){
+                    second = i;
+                }else if(count ==2){
+                    third = i;
+                }
+                count++;
             }
-            if(cnt == 3) { break; }
         }
+
+        answer += (box.get(first)*10000)+ (box.get(second)*100) + box.get(third);
+
         return answer;
     }
 }
