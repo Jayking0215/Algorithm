@@ -2,7 +2,7 @@ class Solution {
     public int[] solution(int brown, int yellow) {
         int[] answer = new int[2];
         int total = brown + yellow;
-        int sqrt = (int) Math.sqrt(total);
+        int sqrt = (int)Math.sqrt(total);
         
         for(int i = sqrt; i >= 1; i--){
             if(total % i == 0){
