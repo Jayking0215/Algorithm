@@ -1,28 +1,16 @@
 class Solution {
-    public String[] solution(int n, int[] arr1, int[] arr2) {
-        String[] answer = new String[n];
-        StringBuilder buf = new StringBuilder();
-        
-        for(int i = 0; i < n; i++){
-            int bitOr = arr1[i] | arr2[i];
-            String str = Integer.toBinaryString(bitOr);
-            
-            while (str.length() < n) {
-                str = "0" + str;//자릿수 맞추기
-            }
-            //for문 대신 replaceAll도 가능 1->"#", 0-> " "
-            for(int j = 0; j < n; j++){
-                if(str.charAt(j) == '1'){
-                    buf.append("#");
-                }else{
-                    buf.append(" ");
-                }
-            }
-            
-            answer[i] = buf.toString();
-            buf.setLength(0);
-        }
-        
-        return answer;
-    }
+  public String[] solution(int n, int[] arr1, int[] arr2) {
+      String[] answer = new String[n];
+      String temp;
+
+      for(int i = 0 ; i < n ; i++){
+          temp = String.format("%16s", Integer.toBinaryString(arr1[i] | arr2[i]));
+          temp = temp.substring(temp.length() - n);
+          temp = temp.replaceAll("1", "#");
+          temp = temp.replaceAll("0", " ");
+          answer[i] = temp;
+      }
+
+      return answer;
+  }
 }
