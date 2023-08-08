@@ -10,7 +10,7 @@ class Solution {
             while (str.length() < n) {
                 str = "0" + str;//자릿수 맞추기
             }
-            
+            //for문 대신 replaceAll도 가능 1->"#", 0-> " "
             for(int j = 0; j < n; j++){
                 if(str.charAt(j) == '1'){
                     buf.append("#");
