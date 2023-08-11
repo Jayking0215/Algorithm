@@ -1,22 +1,12 @@
 class Solution {
     public int[] solution(int num, int total) {
         int[] answer = new int[num];
-        int start = total / num - (num - 1) / 2;
-        int sum = 0;
+        int check = num*(num+1) / 2;//1~num까지 자연수의 합
+        int start = (total - check) / num + 1;
         
         for (int i = 0; i < num; i++) {
-            answer[i] = start + i;
-            sum += answer[i];
+                answer[i] = start + i ;
         }
-
-        int diff = total - sum;
-          
-        for (int i = num - 1; i >= 0 && diff > 0; i--) {
-            int add = Math.min(diff, num - answer[i]);
-            answer[i] += add;
-            diff -= add;
-        }
-
         return answer;
     }
 }
