@@ -8,7 +8,7 @@ class Solution {
             total += mdays[i];
         }
         
-        total += b - 1;//0부터 시작하므로 -1
+        total += b - 1;//b가 0부터 시작하므로 -1
         int wdays = total % 7;
         
         return days[wdays];
