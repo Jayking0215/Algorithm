@@ -9,7 +9,7 @@ class Solution {
         }
         
         total += b - 1;//0부터 시작하므로 -1
-        int wdays = (total + 5) % 7;
+        int wdays = total % 7;
         
         return days[wdays];
     }
