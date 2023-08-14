@@ -1,6 +1,6 @@
 class Solution {
     public String solution(int a, int b) {
-        String[] days = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
+        String[] days = {"FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU"};
         int[] mdays = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int total = 0;
         
@@ -9,7 +9,7 @@ class Solution {
         }
         
         total += b - 1;//0부터 시작하므로 -1
-        int wdays = (total + 5) % 7;//금요일부터 시작 = +5
+        int wdays = (total + 5) % 7;
         
         return days[wdays];
     }
