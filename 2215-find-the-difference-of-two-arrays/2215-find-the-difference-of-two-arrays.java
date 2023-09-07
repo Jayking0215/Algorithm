@@ -14,6 +14,7 @@ class Solution {
             set2.add(n);  
         } 
         
+        //1,2 비교 중복제거
         for (int n : set1){
             if(set2.contains(n) == false){
                 list1.add(n);
