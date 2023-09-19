@@ -7,7 +7,13 @@ class Solution {
             int start = commands[i][0] - 1;
             int end = commands[i][1];
             
-            int[] arr = Arrays.copyOfRange(array, start, end);
+            int[] arr = new int[end - start];
+            int cnt = 0;
+            for(int j = start; j < end; j++){
+                arr[cnt] = array[j];
+                cnt++;
+            }
+            
             Arrays.sort(arr);
             answer[i] = arr[commands[i][2] - 1];
         }
