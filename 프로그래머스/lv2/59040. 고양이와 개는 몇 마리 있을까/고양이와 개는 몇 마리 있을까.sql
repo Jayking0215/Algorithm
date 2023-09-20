@@ -1,4 +1,4 @@
-select ANIMAL_TYPE, count(ANIMAL_TYPE) as count
+select ANIMAL_TYPE, count(ANIMAL_ID) as count
 from ANIMAL_INS
-group by ANIMAL_TYPE like '%Cat%'
+group by ANIMAL_TYPE
 order by ANIMAL_TYPE;
