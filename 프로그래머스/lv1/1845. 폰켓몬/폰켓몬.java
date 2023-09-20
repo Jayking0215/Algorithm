@@ -1,17 +1,20 @@
 import java.util.*;
+
 class Solution {
     public int solution(int[] nums) {
-        HashSet<Integer> set = new HashSet<>();
         int answer = 0;
+        int cnt = 1;
         
-        for(int tmp : nums){
-            set.add(tmp);
+        Arrays.sort(nums);
+        for(int i = 0; i < nums.length - 1; i++){
+            if(nums[i] != nums[i + 1]){
+                cnt++;
+            }
         }
-        
-        if(set.size() > nums.length / 2){
+        if(cnt >= (nums.length / 2)){
             answer = nums.length / 2;
         }else{
-            answer = set.size();
+            answer = cnt;
         }
         
         return answer;
