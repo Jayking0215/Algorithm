@@ -1,8 +1,8 @@
 import java.util.*;
 class Solution {
     boolean solution(String s) {
-        Stack<Character> stack = new Stack<>();
         boolean answer = true;
+        Stack<Character> stack = new Stack<>();
         
         for(int i = 0; i < s.length(); i++){
             char ch = s.charAt(i);
@@ -16,12 +16,11 @@ class Solution {
                 }
             }
         }
-        
+
         if(!stack.isEmpty()){
             answer = false;
         }
-    
-
+        
         return answer;
     }
 }
