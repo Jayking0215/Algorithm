@@ -1,2 +1,2 @@
-select min(DATETIME) as DATETIME
-from ANIMAL_INS;
+select min(DATETIME) as '시간'
+from ANIMAL_INS
