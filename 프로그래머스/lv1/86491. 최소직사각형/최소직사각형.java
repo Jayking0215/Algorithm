@@ -1,4 +1,3 @@
-import java.util.*;
 class Solution {
     public int solution(int[][] sizes) {
         int answer = 0;
@@ -11,7 +10,8 @@ class Solution {
             mv = Math.max(mv, v);
             mh = Math.max(mh, h);
         }
-        answer = mv * mh;
+        
+        answer = mv * mh;        
         
         return answer;
     }
