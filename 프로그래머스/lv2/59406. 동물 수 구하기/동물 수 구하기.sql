@@ -1,1 +1,2 @@
-select count(*) as count from ANIMAL_INS;
+select count(ANIMAL_TYPE)
+from ANIMAL_INS;
