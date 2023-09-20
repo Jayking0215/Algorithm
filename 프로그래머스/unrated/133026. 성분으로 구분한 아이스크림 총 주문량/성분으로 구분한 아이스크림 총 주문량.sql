@@ -1,4 +1,6 @@
 select b.INGREDIENT_TYPE, sum(a.TOTAL_ORDER) as TOTAL_ORDER
-from FIRST_HALF as a inner join ICECREAM_INFO as b on a.FLAVOR = b.FLAVOR
+from FIRST_HALF as a 
+inner join ICECREAM_INFO as b
+on a.FLAVOR = b.FLAVOR
 group by INGREDIENT_TYPE
 order by TOTAL_ORDER;
