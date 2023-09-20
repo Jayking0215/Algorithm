@@ -1,6 +1,16 @@
-select outs.ANIMAL_ID, outs.NAME
-from ANIMAL_OUTS as outs
-left join ANIMAL_INS as ins
-on ins.ANIMAL_ID = outs.ANIMAL_ID
-where ins.ANIMAL_ID is null
-order by outs.ANIMAL_ID;
+select o.ANIMAL_ID, o.NAME
+from ANIMAL_OUTS as o
+left join ANIMAL_INS as i
+on o.ANIMAL_ID = i.ANIMAL_ID
+where i.ANIMAL_ID is null
+order by o.ANIMAL_ID;
+
+
+
+
+# SELECT OUTS.ANIMAL_ID, OUTS.NAME
+# FROM ANIMAL_OUTS OUTS
+# LEFT OUTER JOIN ANIMAL_INS INS
+# ON OUTS.ANIMAL_ID = INS.ANIMAL_ID
+# WHERE INS.ANIMAL_ID is NULL
+# ORDER BY OUTS.ANIMAL_ID
