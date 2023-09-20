@@ -8,14 +8,15 @@ class Solution {
             int end = commands[i][1];
             
             int[] arr = new int[end - start];
-            int cnt = 0;
-            for(int j = start; j < end; j++){
-                arr[cnt] = array[j];
-                cnt++;
-            }
+            int idx = 0;
             
+            for(int j = start; j < end; j++){
+                arr[idx] = array[j];
+                idx++;
+            }
             Arrays.sort(arr);
             answer[i] = arr[commands[i][2] - 1];
+            
         }
         
         return answer;
