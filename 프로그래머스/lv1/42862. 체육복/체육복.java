@@ -4,10 +4,12 @@ class Solution {
         int answer = n - lost.length;
         Arrays.sort(lost); 
         Arrays.sort(reserve);
+        
+        //여벌이 도난된 경우
         for (int i = 0; i < reserve.length; i++) {
             for (int j = 0; j < lost.length; j++) {
                 if (reserve[i] == lost[j]) {
-                    reserve[i] = -1;//중복 방지
+                    reserve[i] = -1;//중복 방지, 값 변경
                     lost[j] = -1;
                     answer++;
                     break;
