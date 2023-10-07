@@ -1,6 +1,6 @@
 class Solution {
     public int[] solution(String s) {
-        int[] answer = new int[2];//[변환횟수, 제거된 총0]   
+        int[] answer = new int[2];
         int cnt = 0;
         
         while(!s.equals("1")){
@@ -18,7 +18,7 @@ class Solution {
 
 // class Solution {
 //     public int[] solution(String s) {
-//         int[] answer = new int[2];
+//         int[] answer = new int[2];//[변환횟수, 제거된 총0] 
 //         int temp;
 //         while( !s.equals("1") ) {
 //             answer[1] += s.length();
