@@ -3,13 +3,13 @@ class Solution {
     int answer = 0;
     int n = x ^ y;
         
-    while(n != 0){
-        if((n & 1) == 1){//가장 오른쪽 비트(최하위 비트)끼리의 AND 연산
-            answer++;            
-        }
-        n = n >> 1;
-    }
-        
+    // while(n != 0){
+    //     if((n & 1) == 1){//가장 오른쪽 비트(최하위 비트)끼리의 AND 연산
+    //         answer++;            
+    //     }
+    //     n = n >> 1;
+    // }
+    answer = Integer.bitCount(n);
     return answer;
     }
 }
