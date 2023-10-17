@@ -12,7 +12,7 @@ class Solution {
         }
         
         for(int key : map.keySet()){
-            cnt += map.get(key)/2;
+            cnt += map.get(key)/2; //key값에 해당하면 value값
         }
         
         return cnt == nums.length / 2;
