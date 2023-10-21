@@ -7,29 +7,29 @@ public class Main{
         Stack<Integer> stack = new Stack<>();
         int N = Integer.parseInt(bf.readLine());
         
-        for(int i = 0; i < N; i++) {
+        for(int i = 0; i < N; i++){
             String input = bf.readLine().trim();
             String[] command = input.split(" ");
             
             switch(command[0]){
-                case "push" :
+                case "push":
                     int X = Integer.parseInt(command[1]);
                     stack.push(X);
                     break;
                     
-                case "pop" :
-                    if(!stack.isEmpty()){
-                        System.out.println(stack.pop());
-                    }else{
+                case "pop":
+                    if(stack.isEmpty()){
                         System.out.println(-1);
+                    }else{
+                        System.out.println(stack.pop());
                     }
                     break;
                     
-                case "size" :
+                case "size":
                     System.out.println(stack.size());
                     break;
                     
-                case "empty" :
+                case "empty":
                     if(stack.isEmpty()){
                         System.out.println(1);
                     }else{
@@ -37,14 +37,14 @@ public class Main{
                     }
                     break;
                     
-                case "top" :
-                    if (!stack.isEmpty()) {
-                        System.out.println(stack.peek());
-                    } else {
+                case "top":
+                    if(stack.isEmpty()){
                         System.out.println(-1);
+                    }else{
+                        System.out.println(stack.peek());
                     }
                     break;
             }
-        }
+        }    
     }
 }
