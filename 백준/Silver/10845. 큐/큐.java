@@ -1,8 +1,5 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.io.*;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -20,11 +17,7 @@ public class Main {
                     queue.add(X);
                     break;
                 case "pop":
-                    if (!queue.isEmpty()) {
-                        System.out.println(queue.poll());
-                    } else {
-                        System.out.println(-1);
-                    }
+                    System.out.println(queue.isEmpty() ? -1 : queue.poll());
                     break;
                 case "size":
                     System.out.println(queue.size());
@@ -33,11 +26,7 @@ public class Main {
                     System.out.println(queue.isEmpty() ? 1 : 0);
                     break;
                 case "front":
-                    if (!queue.isEmpty()) {
-                        System.out.println(queue.peek());
-                    } else {
-                        System.out.println(-1);
-                    }
+                    System.out.println(queue.isEmpty() ? -1 : queue.peek());
                     break;
                 case "back":
                     if (!queue.isEmpty()) {
