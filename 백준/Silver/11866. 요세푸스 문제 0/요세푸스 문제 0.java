@@ -1,43 +1,33 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
+import java.io.*;
 
-public class Main {
+public class Main{
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+        Queue<Integer> q = new LinkedList<>();
         
+        StringBuilder sb = new StringBuilder();
         String[] str = br.readLine().split(" ");
         int n = Integer.parseInt(str[0]); // 사람 수
         int k = Integer.parseInt(str[1]); // 요세푸스 k
-        Queue<Integer> queue = new LinkedList<>();
         
-        // 원에 사람 추가
-        for (int i = 1; i <= n; i++) {
-            queue.offer(i);
+        sb.append("<");
+        
+        for(int i = 1; i <= n; i++){
+            q.offer(i);//Q 원형에 사람 배치
         }
         
-        StringBuilder sb = new StringBuilder();
-        sb.append("<");
-
-        while (!queue.isEmpty()) {
-            for (int i = 0; i < k - 1; i++) {
-                // K-1번째까지의 사람을 다시 원에 넣기
-                int front = queue.poll();
-                queue.offer(front);
+        while(!q.isEmpty()){
+            for(int i = 1; i < k; i++){
+                q.offer(q.poll());//k번째 이전 사람 뒤로 보내기
             }
+            sb.append(q.poll());//k번째 사람 br에 추가
 
-            // K번째 사람을 제거하고 결과에 추가
-            int removed = queue.poll();
-            sb.append(removed);
-
-            // 원에 남은 사람이 있다면 콤마 추가
-            if (!queue.isEmpty()) {
+            if (!q.isEmpty()) {//앞사람 있으면 ,추가
                 sb.append(", ");
             }
         }
-
+        
         sb.append(">");
         System.out.println(sb.toString());
     }
